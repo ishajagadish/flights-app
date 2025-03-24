@@ -25,7 +25,7 @@ A CLI-based airline reservation system built in Java with PostgreSQL. Users can 
 
   CREATE DATABASE flights;
 
-Load Flight Data
+3. Load Flight Data
 
 \copy CARRIERS from 'carriers.csv' CSV
 
@@ -35,48 +35,41 @@ Load Flight Data
 
 \copy FLIGHTS from 'flights-small.csv' CSV
 
-Set Up JDBC Connection
+
+4. Set Up JDBC Connection
 
 Configure dbconn.properties:
 
-flightapp.server_url = localhost
+  flightapp.server_url = localhost
+  
+  flightapp.database_name = flights
+  
+  flightapp.username = your_postgres_username
+  
+  flightapp.password = your_postgres_password
+  
+  flightapp.tablename_suffix = your_UWNetID
 
-flightapp.database_name = flights
 
-flightapp.username = your_postgres_username
+5. Build and Run
 
-flightapp.password = your_postgres_password
-
-flightapp.tablename_suffix = your_UWNetID
-
-Build and Run
-
-mvn clean compile assembly:single
-
-java -jar target/FlightApp-1.0-jar-with-dependencies.jar
+  mvn clean compile assembly:single
+  
+  java -jar target/FlightApp-1.0-jar-with-dependencies.jar
 
 
 ✅ Example Commands
 
-create alice password123 1000
+  create alice password123 1000
 
-login alice password123
+  login alice password123
 
-search Seattle Boston 0 3 5
+  search Seattle Boston 0 3 5
 
-book 0
+  book 0
 
-pay 1
+  pay 1
 
-reservations
+  reservations
 
-quit
-
-
-🧪 Testing
-
-Tests are located in the /test/cases/ directory. Run with:
-mvn test
-
-Includes both serial and parallel test cases to validate transaction safety and edge cases.
-
+  quit
