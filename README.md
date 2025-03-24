@@ -26,9 +26,11 @@ Load Flight Data
 \copy MONTHS from 'months.csv' CSV
 \copy WEEKDAYS from 'weekdays.csv' CSV
 \copy FLIGHTS from 'flights-small.csv' CSV
+
 Set Up JDBC Connection
 
 Configure dbconn.properties:
+
 flightapp.server_url = localhost
 flightapp.database_name = flights
 flightapp.username = your_postgres_username
